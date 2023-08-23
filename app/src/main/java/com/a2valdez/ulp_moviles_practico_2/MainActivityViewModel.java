@@ -27,12 +27,10 @@ public class MainActivityViewModel extends AndroidViewModel {
 
     public void convertirMoneda(String ctEuros, String ctDolares, boolean rbDolaresEuros, boolean rbEurosDolares){
         //Logica de conversion y seteo a mCambio
-        Log.d("salida", ctDolares);
         Double cambio = (double) 0;
         if(rbDolaresEuros){
             cambio = Double.parseDouble(ctDolares) * 0.92;
-        }
-        if(rbEurosDolares){
+        } else {
             cambio = Double.parseDouble(ctEuros) * 1.09;
         }
         mCambio.setValue(cambio);
